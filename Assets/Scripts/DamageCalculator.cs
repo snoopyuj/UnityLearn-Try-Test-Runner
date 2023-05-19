@@ -8,7 +8,7 @@ public class DamageCalculator
         return Convert.ToInt32(_amount * multiplier);
     }
 
-    public static int CalculateDamage(int _amount, Character _character)
+    public static int CalculateDamage(int _amount, ICharacter _character)
     {
         var totalArmor = _character.Inventory.GetTotalArmor();
         var multiplier = (100f - totalArmor) * 0.01f;
