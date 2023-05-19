@@ -11,4 +11,14 @@ public class damage_calculator
         // Assert
         Assert.AreEqual(5, finalDamage);
     }
+
+    [Test]
+    public void calculates_2_damage_from_10_with_80_percent_mitigation()
+    {
+        // Act
+        var finalDamage = DamageCalculator.CalculateDamage(10, 0.8f);
+
+        // Assert
+        Assert.AreEqual(2, finalDamage);
+    }
 }
