@@ -19,11 +19,11 @@ public class character_with_inventory
             Armor = 50,
         };
 
-        var inventory = new Inventory();
+        var character = Substitute.For<ICharacter>();
+        var inventory = new Inventory(character);
+
         inventory.EquipItem(pants);
         inventory.EquipItem(shield);
-
-        var character = Substitute.For<ICharacter>();
         character.Inventory.Returns(inventory);
 
         // Act
